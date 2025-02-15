@@ -1,3 +1,9 @@
-.myprofile {
-    border-radius: 50em;
+.elementor-element elementor-element-36aup1xe elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget-tablet__width-initial elementor-widget elementor-widget-image {
+    .elementor-widget-container {
+            .img {
+                border: #ad0505;
+                border-radius: 10em;
+                display: contents;
+            }
+    }
 }
