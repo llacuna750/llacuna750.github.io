@@ -1,3 +1,25 @@
+// Replace with your JSON file URL
+    const jsonURL = "https://llacuna750.github.io/students.json"; // Correct file name
+
+    fetch(jsonURL, { mode: "cors" })
+        .then(response => response.json()) // Convert response to JSON
+        .then(data => {
+            let studentList = document.getElementById("student-list");
+
+            // Check if JSON contains 'students' array
+            if (data.students && Array.isArray(data.students)) {
+                data.students.forEach(student => {
+                    let listItem = document.createElement("li");
+                    listItem.textContent = `${student.name} - ${student.age} (Course: ${student.course})`;
+                    studentList.appendChild(listItem);
+                });
+            } else {
+                console.error("Expected 'students' array but got:", data);
+            }
+        })
+    .catch(error => console.error("Error fetching JSON:", error));
+   
+
 // JavaScript for hamburger menu functionality
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger-menu');
