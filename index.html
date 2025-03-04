@@ -359,7 +359,7 @@
         // Replace with your JSON file URL
         const jsonURL = "https://llacuna750.github.io/students.json"; // Correct file name
 
-        fetch(jsonURL)
+        fetch(jsonURL, { mode: "cors" })
             .then(response => response.json()) // Convert response to JSON
             .then(data => {
                 let studentList = document.getElementById("student-list");
