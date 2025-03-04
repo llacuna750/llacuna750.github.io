@@ -1,5 +1,5 @@
 // Replace with your JSON file URL
-    const jsonURL = "students.json";  // Local fetch (no CORS issue)
+    const jsonURL = "https://llacuna750.github.io/students.json"; // Correct file name
 
     fetch(jsonURL, { mode: "cors" })
         .then(response => response.json()) // Convert response to JSON
