@@ -26,10 +26,6 @@
             
         }
 
-        .profile {
-            
-            
-        }
         
         /* Header Styles */
         .navbar {
@@ -73,6 +69,14 @@
             margin: 0 15px;
             cursor: pointer;
             transition: color 0.3s;
+
+            .courseslist {
+                padding: 10px 4px;
+            }
+
+            a {
+                text-decoration: none;
+            }
         }
         
         nav li:hover {
@@ -83,9 +87,13 @@
             color: #4e85fd;
             font-weight: 600;
         }
-        
+
+        .courseslist {
+            padding: 10px 4px;
+        }
+
         .contact {
-            padding: 10px 20px;
+            padding: 10px 4px;
         }
         
         .go-premium-cta {
@@ -339,7 +347,7 @@
                 margin-top: 10px;
                 padding-top: 10px;
             }
-            
+
             .skills-grid {
                 grid-template-columns: 1fr;
             }
@@ -357,6 +365,7 @@
  
 </head>
 <body>
+    
 
     <header class="navbar">
         <div class="container">
@@ -373,6 +382,7 @@
                 </ul>
 
                 <ul class="secondary-nav">
+                    <li class="courseslist"><a href="https://llacuna750.github.io/courses.json/">Courses</a></li>
                     <li class="contact">Contact</li>
                     <li class="go-premium-cta">About</li>
                 </ul>
