@@ -38,7 +38,7 @@ const jsonURL = "https://llacuna750.github.io/students.json";
 fetch(jsonURL) 
 .then(response => response.json()) // Convert response to JSON
 .then(data =>  {
-    let studentList = document.getElementById("course-list");
+    let studentList = document.getElementById("student-list");
 
     // Check if JSON contains 'courses' array
     if (data.students && Array.isArray(data.students)) {
