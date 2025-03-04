@@ -30,8 +30,6 @@
             
             
         }
-
-        
         
         /* Header Styles */
         .navbar {
@@ -358,6 +356,7 @@
     </style>
 </head>
 <body>
+
     <header class="navbar">
         <div class="container">
             <a class="logo" href="#"><b>Gabriel</b><span>Llacuna</span></a>
@@ -379,6 +378,11 @@
             </nav>
         </div>
     </header>
+
+    <div class="page-content">
+        <h2>Student List</h2>
+        <ul id="student-list" class="card-body"></p>
+    </div> 
 
     <main class="hero-main">
         <div class="container">
@@ -454,40 +458,6 @@
         </div>
     </footer>
 
-    <script>
-        // JavaScript for hamburger menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.getElementById('hamburger-menu');
-            const nav = document.getElementById('nav-menu');
-            
-            hamburger.addEventListener('click', function() {
-                nav.classList.toggle('active');
-                const spans = hamburger.querySelectorAll('span');
-                
-                // Animate hamburger to X
-                if (nav.classList.contains('active')) {
-                    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                    spans[1].style.opacity = '0';
-                    spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-                } else {
-                    spans[0].style.transform = 'none';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
-                }
-            });
-            
-            // Close menu when clicking on a menu item
-            const menuItems = nav.querySelectorAll('li');
-            menuItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    nav.classList.remove('active');
-                    const spans = hamburger.querySelectorAll('span');
-                    spans[0].style.transform = 'none';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
-                });
-            });
-        });
-    </script>
+    <script src="mypfolio.js"></script>
 </body>
 </html>
