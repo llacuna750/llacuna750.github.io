@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel Llacuna - Portfolio</title>
     <link rel="shortcut icon" href="portfoliologo.png" type="image/x-icon">
+    <link rel="stylesheet" href="main.css">
     <style>
         * {
             margin: 0;
@@ -19,6 +20,8 @@
         }
         
         .container {
+            position: relative;
+            /* border: 1px solid; */
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
@@ -40,6 +43,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            /* border: 1px solid; */
         }
         
         .logo {
@@ -65,7 +69,8 @@
         }
         
         nav li {
-            margin: 0 15px;
+            /* border: 1px solid; */
+            margin: 0 5px;
             cursor: pointer;
             transition: color 0.3s;
 
@@ -84,18 +89,24 @@
         }
         
         .primary-nav {
-            color: #4e85fd;
+            position: absolute;
+            right: 16.5em;
+            /* border: 1px solid; */
+            color: #141314;
             font-weight: 600;
+            /* display: none; */
+            margin-right: 8px;
         }
 
         .courseslist {
             padding: 10px 4px;
+            /* border: 1px solid; */
         }
 
         
-
         .contact {
             padding: 10px 4px;
+            /* border: 1px solid; */
         }
         
         .go-premium-cta {
@@ -348,6 +359,7 @@
                 border-top: 1px solid #ddd;
                 margin-top: 10px;
                 padding-top: 10px;
+                margin-left: 0;
             }
 
             .skills-grid {
@@ -378,14 +390,14 @@
                 <span></span>
             </div>
             <nav id="nav-menu">
-                <ul>
-                    <li class="primary-nav">Home</li>
-                    <li><a href="https://llacuna750.github.io/pit.github.io">PIT & Quiz</a></li>
+                <ul class="primary-nav">
+                    <li class="hide">Home</li>
+                    <li><a class="pitquiz" href="https://llacuna750.github.io/pit.github.io">PIT & QUIZ</a></li>
                 </ul>
 
                 <ul class="secondary-nav">
                     <li class="courseslist"><a href="https://llacuna750.github.io/courses">Courses</a></li>
-                    <li class="contact">Contact</li>
+                    <li class="contact"><a href="https://www.facebook.com/gabriel.anucall/">Contact</a></li>
                     <li class="go-premium-cta">About</li>
                 </ul>
             </nav>
