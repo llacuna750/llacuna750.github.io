@@ -45,6 +45,15 @@
             align-items: center;
             /* border: 1px solid; */
         }
+
+        .pitquiz a{
+            color:  #5300fa;
+            font-family: sans-serif;
+            border: 1px solid;
+            padding: 1em;
+            border-radius: 5px;
+            box-shadow: 0 5px 3px rgba(0,0,0,0.1);
+        }
         
         .logo {
             font-size: 1.5rem;
@@ -96,6 +105,7 @@
             font-weight: 600;
             /* display: none; */
             margin-right: 8px;
+            font-family: sans-serif;
         }
 
         .courseslist {
@@ -205,8 +215,42 @@
         .hero-main img {
             width: 250px;
             height: auto;
-            border-radius: 50%;
+            border-radius: 100%;
             margin-bottom: 60px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* PROFILE PIC */
+        .profile {
+            border-radius: 50%;
+        }
+
+        .skill-card {
+            /* border: 1px solid; */
+        }
+
+        .skill-card .mypaint {
+            /* justify-content: center; */
+            /* align-items: center; */
+            /* border: 1px solid; */
+            /* border-radius: 50%; */
+            margin: 1px 0 22px;
+            /* right: 15em; */
+            width: 290px;
+            height: 20%;
+            /* display: flex; */
+            justify-content: center;
+            position: relative;
+        }
+
+        .mypaint .circle {
+            position: absolute;
+            /* top: 1em; */
+            left: 7.1em;
+            height: 100%;
+            width: 21%;
+            border-radius: 50%;
+            /* border: 1px solid; */
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
@@ -214,14 +258,22 @@
         .MeetGab {
             text-align: center;
             margin-bottom: 80px;
+            /* border: 1px solid; */
+            text-align: center;
         }
         
         .MeetGab .paint {
             margin-bottom: 51px;
-            border-radius: .1px auto; 
-            width: 20%; 
-            height: auto;
-            padding: 7px 7px;
+            border-radius: none;
+            box-shadow: none;
+            background-size: contain; 
+            /* width: 20%;  */
+            height: 100%;
+            padding: 10px;
+            width: 20%;
+            border-radius: 1px;
+            /* border: 1px solid; */
+            
         }
         
         .MeetGab > p {
@@ -360,6 +412,7 @@
                 margin-top: 10px;
                 padding-top: 10px;
                 margin-left: 0;
+                font-family: sans-serif;
             }
 
             .skills-grid {
@@ -379,8 +432,6 @@
  
 </head>
 <body>
-    
-
     <header class="navbar">
         <div class="container">
             <a class="logo" href="#"><b>Gabriel</b><span>Llacuna</span></a>
@@ -389,10 +440,11 @@
                 <span></span>
                 <span></span>
             </div>
+            
             <nav id="nav-menu">
                 <ul class="primary-nav">
                     <li class="hide">Home</li>
-                    <li><a class="pitquiz" href="https://llacuna750.github.io/pit.github.io">PIT & QUIZ</a></li>
+                    <li class="pitquiz"><a  href="https://llacuna750.github.io/pit.github.io">Pit and Quiz</a></li>
                 </ul>
 
                 <ul class="secondary-nav">
@@ -416,7 +468,7 @@
                 </div>
             </div>
 
-            <img class="profile" src="images/person.svg" alt="Gabriel Llacuna's Profile Picture">
+            <img class="profile" src="images/pangprofile.png" alt="Gabriel Llacuna's Profile Picture">
 
             <div class="MeetGab">
                 <p>Meet Gabriel Llacuna</p>
@@ -430,7 +482,15 @@
                     </div>
 
                     <div class="skill-card">
-                        <img class="paint" src="images/Paint.svg" alt="Creative Design Icon">
+                        
+                        <div class="mypaint">
+                            <div class="circle">
+
+                            </div>
+                                <img class="paint" src="images/Paint.svg" alt="Creative Design Icon">
+                            
+                        </div>
+                        
                         <h4>Creative Design</h4>
                         <p>With a strong focus on aesthetics, Gabriel crafts visually appealing interfaces that enhance user engagement. His design philosophy revolves around simplicity and functionality.</p>
                     </div>
@@ -464,12 +524,12 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <h3>Gabriel Llacuna</h3>
+                <!-- <h3>Gabriel Llacuna</h3> -->
                 <p>Web Developer & Designer</p>
                 <div class="social-links">
-                    <a href="#">LinkedIn</a>
-                    <a href="#">GitHub</a>
-                    <a href="#">Twitter</a>
+                    <a href="https://www.linkedin.com/in/gabriel-llacuna-59a084354/">LinkedIn</a>
+                    <a href="https://github.com/llacuna750">GitHub</a>
+                    <a href="https://x.com/gabriel70309720">Twitter</a>
                 </div>
             </div>
             <div class="copyright">
