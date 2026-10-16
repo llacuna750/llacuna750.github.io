@@ -1,3 +1,5 @@
+import profilePicture from '../profilepicture/pangprofile.png'
+
 function Hero() {
   return (
     <section className="hero section-wrap" id="top" aria-labelledby="hero-title">
@@ -45,33 +47,21 @@ function Hero() {
         </div>
       </div>
 
-      <div className="hero-code-container" aria-label="Technical profile preview">
-        <div className="tech-code-card">
-          <div className="code-card-header">
-            <div className="window-dots" aria-hidden="true">
-              <span className="dot dot-red" />
-              <span className="dot dot-yellow" />
-              <span className="dot dot-green" />
-            </div>
-            <span className="code-card-filename">profile.ts</span>
-          </div>
-          <pre className="code-card-body"><code><span className="token-keyword">interface</span> <span className="token-type">ITStudent</span> {'{'}{'\n'}
-  name: <span className="token-type">string</span>;{'\n'}
-  discipline: <span className="token-type">string</span>;{'\n'}
-  focusAreas: <span className="token-type">string[]</span>;{'\n'}
-  readyForRole: <span className="token-type">boolean</span>;{'\n'}
-{'}'}{'\n\n'}
-<span className="token-keyword">const</span> profile: <span className="token-type">ITStudent</span> = {'{'}{'\n'}
-  name: <span className="token-string">'Gabriel Llacuna'</span>,{'\n'}
-  discipline: <span className="token-string">'Information Technology'</span>,{'\n'}
-  focusAreas: [<span className="token-string">'Networking'</span>, <span className="token-string">'Java'</span>, <span className="token-string">'Web'</span>],{'\n'}
-  readyForRole: <span className="token-keyword">true</span>{'\n'}
-{'}'};</code></pre>
-          <div className="code-card-footer">
-            <span>// Learning continuously</span>
-            <span className="verified-tag">✓ Verified Student</span>
-          </div>
-        </div>
+      <div className="hero-profile-container">
+        <div className="profile-accent-circle" aria-hidden="true" />
+        <figure className="profile-card">
+          <img
+            className="profile-photo"
+            src={profilePicture}
+            alt="Portrait of Gabriel Llacuna"
+          />
+          <figcaption className="profile-card-caption">
+            <span className="profile-card-label">INFORMATION TECHNOLOGY STUDENT</span>
+            <strong>Gabriel Llacuna</strong>
+            <span>Networking · Programming · Web</span>
+          </figcaption>
+        </figure>
+        <span className="profile-float-tag">LEARNING BY BUILDING</span>
       </div>
     </section>
   )
