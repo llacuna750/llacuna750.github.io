@@ -4,9 +4,10 @@ function Header() {
       <div className="section-wrap site-header">
         {/* Zone 1: Brand Wordmark */}
         <a className="wordmark" href="#top" aria-label="Gabriel Llacuna - IT Student Portfolio">
-          <span>GL</span>
+          {/* <span>GL</span>
           <span className="wordmark-badge">.</span>
-          <span className="wordmark-sub">IT Student</span>
+          <span className="wordmark-sub">IT Student</span> 
+          */}
         </a>
 
         {/* Zone 2: Concise Nav Links */}
