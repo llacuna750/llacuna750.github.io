@@ -3,7 +3,7 @@ function Footer() {
     <footer className="site-footer">
       <div className="section-wrap footer-content">
         <span>© {new Date().getFullYear()} Gabriel Llacuna</span>
-        <a href="#top">Back to top ↑</a>
+        <a href="#top">Top</a>
       </div>
     </footer>
   )
