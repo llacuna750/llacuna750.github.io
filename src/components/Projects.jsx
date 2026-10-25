@@ -4,7 +4,7 @@ function Projects() {
   return (
     <section className="content-section" id="projects" aria-labelledby="projects-title">
       <div className="section-wrap">
-        <h2 className="section-label" id="projects-title">Work</h2>
+        <h2 className="section-label" id="projects-title">Networking &amp; Web Development Projects</h2>
         <div className="projects-list">
           {projectsData.map((project) => (
             <article className="project-row" key={project.id}>
@@ -15,9 +15,9 @@ function Projects() {
                   {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
               </div>
-              {/* <a href={project.githubUrl} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} on GitHub`}>
-                GitHub
-              </a> */}
+              <a href={project.path} aria-label={`Read the ${project.title} case study`}>
+                Read case study
+              </a>
             </article>
           ))}
         </div>

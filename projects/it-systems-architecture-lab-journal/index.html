@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse an IT lab journal covering the OSI model, packet routing, Linux networking commands, and Java OOP examples." />
+    <meta name="author" content="Gabriel Llacuna" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#f7f8fc" />
+    <link rel="canonical" href="https://llacuna750.github.io/projects/it-systems-architecture-lab-journal/" />
+    <title>IT Systems Lab Journal | Networking and Java</title>
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Gabriel Llacuna Portfolio" />
+    <meta property="og:title" content="IT Systems Lab Journal | Networking and Java" />
+    <meta property="og:description" content="Browse an IT lab journal covering the OSI model, packet routing, Linux networking commands, and Java OOP examples." />
+    <meta property="og:url" content="https://llacuna750.github.io/projects/it-systems-architecture-lab-journal/" />
+    <meta property="og:image" content="https://llacuna750.github.io/og-image.png" />
+    <meta property="og:image:alt" content="Gabriel Llacuna, an Information Technology student focused on networking and web development." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IT Systems Lab Journal | Networking and Java" />
+    <meta name="twitter:description" content="An IT lab journal covering OSI, routing, Linux CLI, and Java OOP." />
+    <meta name="twitter:image" content="https://llacuna750.github.io/og-image.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "@id": "https://llacuna750.github.io/projects/it-systems-architecture-lab-journal/#project",
+        "name": "IT Systems and Architecture Lab Journal",
+        "url": "https://llacuna750.github.io/projects/it-systems-architecture-lab-journal/",
+        "description": "An IT lab journal covering the OSI model, packet routing, Linux networking commands, and Java OOP examples.",
+        "author": {
+          "@type": "Person",
+          "name": "Gabriel Llacuna",
+          "url": "https://llacuna750.github.io/"
+        },
+        "keywords": "OSI model, packet routing, Linux CLI, Java OOP, IT lab journal"
+      }
+    </script>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem('portfolio-theme')
+          const theme = savedTheme === 'dark' || savedTheme === 'light'
+            ? savedTheme
+            : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+          document.documentElement.dataset.theme = theme
+          document.querySelector('meta[name="theme-color"]')?.setAttribute(
+            'content',
+            theme === 'dark' ? '#0c1222' : '#f7f8fc',
+          )
+        } catch {
+          // Keep the default light theme if browser storage is unavailable.
+        }
+      })()
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body data-project-id="it-learning-notes">
+    <div id="root"></div>
+    <noscript>
+      <main>
+        <h1>IT Systems and Architecture Lab Journal</h1>
+        <p>A technical reference journal covering the OSI model, routing concepts, Linux networking commands, and Java OOP examples.</p>
+        <p><a href="/">Return to Gabriel Llacuna's portfolio</a></p>
+      </main>
+    </noscript>
+    <script type="module" src="/src/project-main.jsx"></script>
+  </body>
+</html>

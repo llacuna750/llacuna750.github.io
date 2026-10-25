@@ -7,8 +7,8 @@ function About() {
         <h2 className="section-label" id="about-title">About</h2>
         <div className="about-copy">
           <p>
-            I focus on the fundamentals first: how networks route information,
-            how programs are structured, and how thoughtful interfaces are built.
+            I am an Information Technology student in the Philippines with a foundation in TCP/IP,
+            IPv4 subnetting, Java, and web development.
           </p>
           <p>
             I'm growing through coursework, certifications, and small practical

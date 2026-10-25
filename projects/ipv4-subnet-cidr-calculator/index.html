@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore a React IPv4 subnet and CIDR calculator for networking labs, including network IDs, broadcast addresses, host counts, and binary masks." />
+    <meta name="author" content="Gabriel Llacuna" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#f7f8fc" />
+    <link rel="canonical" href="https://llacuna750.github.io/projects/ipv4-subnet-cidr-calculator/" />
+    <title>IPv4 Subnet Calculator Project | React Lab Tool</title>
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Gabriel Llacuna Portfolio" />
+    <meta property="og:title" content="IPv4 Subnet Calculator Project | React Lab Tool" />
+    <meta property="og:description" content="Explore a React IPv4 subnet and CIDR calculator for networking labs, including network IDs, broadcast addresses, host counts, and binary masks." />
+    <meta property="og:url" content="https://llacuna750.github.io/projects/ipv4-subnet-cidr-calculator/" />
+    <meta property="og:image" content="https://llacuna750.github.io/og-image.png" />
+    <meta property="og:image:alt" content="Gabriel Llacuna, an Information Technology student focused on networking and web development." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IPv4 Subnet Calculator Project | React Lab Tool" />
+    <meta name="twitter:description" content="A React IPv4 subnet and CIDR calculator for networking labs." />
+    <meta name="twitter:image" content="https://llacuna750.github.io/og-image.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "@id": "https://llacuna750.github.io/projects/ipv4-subnet-cidr-calculator/#project",
+        "name": "IPv4 Subnet Calculator for Networking Labs",
+        "url": "https://llacuna750.github.io/projects/ipv4-subnet-cidr-calculator/",
+        "description": "A React IPv4 subnet and CIDR calculator for networking labs, including network IDs, broadcast addresses, host counts, and binary masks.",
+        "author": {
+          "@type": "Person",
+          "name": "Gabriel Llacuna",
+          "url": "https://llacuna750.github.io/"
+        },
+        "keywords": "IPv4 subnetting, CIDR, React, networking labs"
+      }
+    </script>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem('portfolio-theme')
+          const theme = savedTheme === 'dark' || savedTheme === 'light'
+            ? savedTheme
+            : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+          document.documentElement.dataset.theme = theme
+          document.querySelector('meta[name="theme-color"]')?.setAttribute(
+            'content',
+            theme === 'dark' ? '#0c1222' : '#f7f8fc',
+          )
+        } catch {
+          // Keep the default light theme if browser storage is unavailable.
+        }
+      })()
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body data-project-id="subnet-calculator">
+    <div id="root"></div>
+    <noscript>
+      <main>
+        <h1>IPv4 Subnet Calculator for Networking Labs</h1>
+        <p>An interactive React utility for checking IPv4 subnet calculations, including network IDs, broadcast addresses, usable host counts, and binary subnet masks.</p>
+        <p><a href="/">Return to Gabriel Llacuna's portfolio</a></p>
+      </main>
+    </noscript>
+    <script type="module" src="/src/project-main.jsx"></script>
+  </body>
+</html>

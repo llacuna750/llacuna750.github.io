@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore a JavaScript network diagnostic simulator for DNS lookup latency, service ports, TCP/IP flow, and round-trip-time scenarios." />
+    <meta name="author" content="Gabriel Llacuna" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#f7f8fc" />
+    <link rel="canonical" href="https://llacuna750.github.io/projects/network-port-latency-diagnostic-simulator/" />
+    <title>Network Diagnostic Simulator | TCP/IP Project</title>
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Gabriel Llacuna Portfolio" />
+    <meta property="og:title" content="Network Diagnostic Simulator | TCP/IP Project" />
+    <meta property="og:description" content="Explore a JavaScript network diagnostic simulator for DNS lookup latency, service ports, TCP/IP flow, and round-trip-time scenarios." />
+    <meta property="og:url" content="https://llacuna750.github.io/projects/network-port-latency-diagnostic-simulator/" />
+    <meta property="og:image" content="https://llacuna750.github.io/og-image.png" />
+    <meta property="og:image:alt" content="Gabriel Llacuna, an Information Technology student focused on networking and web development." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Network Diagnostic Simulator | TCP/IP Project" />
+    <meta name="twitter:description" content="A JavaScript simulator for DNS, ports, TCP/IP flow, and latency scenarios." />
+    <meta name="twitter:image" content="https://llacuna750.github.io/og-image.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "@id": "https://llacuna750.github.io/projects/network-port-latency-diagnostic-simulator/#project",
+        "name": "Network Port and Latency Diagnostic Simulator",
+        "url": "https://llacuna750.github.io/projects/network-port-latency-diagnostic-simulator/",
+        "description": "A JavaScript network diagnostic simulator for DNS lookup latency, service ports, TCP/IP flow, and round-trip-time scenarios.",
+        "author": {
+          "@type": "Person",
+          "name": "Gabriel Llacuna",
+          "url": "https://llacuna750.github.io/"
+        },
+        "keywords": "TCP/IP, DNS, network diagnostics, service ports, JavaScript"
+      }
+    </script>
+    <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem('portfolio-theme')
+          const theme = savedTheme === 'dark' || savedTheme === 'light'
+            ? savedTheme
+            : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+          document.documentElement.dataset.theme = theme
+          document.querySelector('meta[name="theme-color"]')?.setAttribute(
+            'content',
+            theme === 'dark' ? '#0c1222' : '#f7f8fc',
+          )
+        } catch {
+          // Keep the default light theme if browser storage is unavailable.
+        }
+      })()
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body data-project-id="network-monitor">
+    <div id="root"></div>
+    <noscript>
+      <main>
+        <h1>Network Port and Latency Diagnostic Simulator</h1>
+        <p>An interactive JavaScript simulator for exploring DNS lookup latency, standard service ports, packet flow, and round-trip-time scenarios.</p>
+        <p><a href="/">Return to Gabriel Llacuna's portfolio</a></p>
+      </main>
+    </noscript>
+    <script type="module" src="/src/project-main.jsx"></script>
+  </body>
+</html>
