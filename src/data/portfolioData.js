@@ -146,6 +146,7 @@ export const certificatesData = [
 export const projectsData = [
   {
     id: 'subnet-calculator',
+    path: '/projects/ipv4-subnet-cidr-calculator/',
     title: 'IPv4 Subnet & CIDR Lab Utility',
     category: 'Networking',
     type: 'Interactive Tool',
@@ -158,10 +159,24 @@ export const projectsData = [
       'Calculates usable host capacity from /8 to /30 CIDR notations.',
       'Renders visual bitmask decomposition into 4 octets with binary breakdown.',
       'Helps students verify subnet partitioning for Cisco Packet Tracer labs.'
-    ]
+    ],
+    seo: {
+      title: 'IPv4 Subnet Calculator Project | React Lab Tool',
+      description: 'Explore a React IPv4 subnet and CIDR calculator for networking labs, including network IDs, broadcast addresses, host counts, and binary masks.',
+      h1: 'IPv4 Subnet Calculator for Networking Labs',
+      lead: 'An interactive React utility for checking IPv4 subnet calculations in networking labs. It computes network IDs, broadcast addresses, usable host counts, and binary subnet masks.',
+    },
+    caseStudy: {
+      focus: 'IPv4 subnetting and CIDR',
+      challenge: 'Subnetting requires several related values to be checked together, from a CIDR prefix and subnet mask to host capacity and address boundaries.',
+      solution: 'I created a visual utility that brings those calculations into one workflow and exposes the binary mask breakdown used to reach each result.',
+      learning: 'The project focuses on making CIDR calculations easier to inspect and verify during hands-on networking practice.',
+      relatedProjectId: 'network-monitor',
+    },
   },
   {
     id: 'network-monitor',
+    path: '/projects/network-port-latency-diagnostic-simulator/',
     title: 'Network Port & Latency Diagnostic Sim',
     category: 'Networking',
     type: 'Systems & Diagnostics',
@@ -174,10 +189,24 @@ export const projectsData = [
       'Demonstrates TCP 3-way handshake simulation and standard service port allocations.',
       'Simulates ICMP echo requests with jitter and round-trip time (RTT) calculation.',
       'Includes diagnostic error scenarios (timeout, refused, packet loss).'
-    ]
+    ],
+    seo: {
+      title: 'Network Diagnostic Simulator | TCP/IP Project',
+      description: 'Explore a JavaScript network diagnostic simulator for DNS lookup latency, service ports, TCP/IP flow, and round-trip-time scenarios.',
+      h1: 'Network Port and Latency Diagnostic Simulator',
+      lead: 'An interactive JavaScript simulator for exploring DNS lookup latency, standard service ports, and packet round-trip time. It models diagnostic scenarios including timeouts, refused connections, and packet loss.',
+    },
+    caseStudy: {
+      focus: 'TCP/IP, ports, and diagnostics',
+      challenge: 'Network troubleshooting involves connected concepts such as name resolution, ports, packet flow, and timing that are often learned separately.',
+      solution: 'I modeled those concepts in one diagnostic simulator so a learner can connect common service ports and packet behaviour with the outcomes of a network check.',
+      learning: 'The project centers on how DNS, TCP/IP, and latency signals can be read together during basic network troubleshooting.',
+      relatedProjectId: 'it-learning-notes',
+    },
   },
   {
     id: 'it-learning-notes',
+    path: '/projects/it-systems-architecture-lab-journal/',
     title: 'IT Systems & Architecture Lab Journal',
     category: 'Systems & Code',
     type: 'Documentation & Labs',
@@ -190,7 +219,20 @@ export const projectsData = [
       'Interactive OSI Layer explorer mapping protocols (HTTP, TCP, IP, Ethernet) to layers.',
       'Quick-reference cheat sheet for standard Linux bash networking commands (ifconfig, netstat, ping).',
       'Code snippets illustrating Java OOP inheritance and modular structuring.'
-    ]
+    ],
+    seo: {
+      title: 'IT Systems Lab Journal | Networking and Java',
+      description: 'Browse an IT lab journal covering the OSI model, packet routing, Linux networking commands, and Java OOP examples.',
+      h1: 'IT Systems and Architecture Lab Journal',
+      lead: 'A technical reference journal that connects networking, systems, and programming fundamentals. It documents the OSI model, routing concepts, Linux networking commands, and Java OOP examples.',
+    },
+    caseStudy: {
+      focus: 'OSI, Linux CLI, and Java OOP',
+      challenge: 'Networking, systems, and programming topics are easier to revisit when their concepts and practical references are kept in one place.',
+      solution: 'I organized technical reference notes and small interactive examples around the OSI model, routing, Linux networking commands, and Java object-oriented programming.',
+      learning: 'The journal is a focused record of core concepts that support continued work across networking and software projects.',
+      relatedProjectId: 'subnet-calculator',
+    },
   }
 ]
 
