@@ -12,11 +12,14 @@
   --glow-one: rgba(99, 102, 241, 0.18);
   --glow-two: rgba(45, 212, 191, 0.14);
   --glow-three: rgba(56, 189, 248, 0.12);
-  --ambient-one: rgba(79, 70, 229, 0.24);
-  --ambient-two: rgba(45, 212, 191, 0.22);
-  --ambient-three: rgba(56, 189, 248, 0.18);
-  --tile-shine: rgba(255, 255, 255, 0.7);
-  --tile-grid: rgba(79, 70, 229, 0.12);
+  --ambient-one: rgba(79, 70, 229, 0.16);
+  --ambient-two: rgba(45, 212, 191, 0.14);
+  --ambient-three: rgba(56, 189, 248, 0.12);
+  --card-tile-color: rgba(16, 185, 129, 0.055);
+  --card-line-color: rgba(79, 70, 229, 0.14);
+  --card-shine-opacity: 0.22;
+  --card-shine-gradient: conic-gradient(from 205deg at 50% 50%, transparent 0deg, #10b981 25deg, rgba(52, 211, 153, 0.16) 295deg, transparent 360deg);
+  --card-hover-border-color: rgba(79, 70, 229, 0.36);
   --tile-glass: rgba(255, 255, 255, 0.48);
   --grid-line: rgba(100, 116, 139, 0.055);
   --font: Inter, system-ui, -apple-system, sans-serif;
@@ -36,11 +39,14 @@
   --glow-one: rgba(99, 102, 241, 0.28);
   --glow-two: rgba(45, 212, 191, 0.16);
   --glow-three: rgba(56, 189, 248, 0.13);
-  --ambient-one: rgba(129, 140, 248, 0.32);
-  --ambient-two: rgba(45, 212, 191, 0.25);
-  --ambient-three: rgba(56, 189, 248, 0.22);
-  --tile-shine: rgba(255, 255, 255, 0.38);
-  --tile-grid: rgba(165, 180, 252, 0.16);
+  --ambient-one: rgba(129, 140, 248, 0.2);
+  --ambient-two: rgba(45, 212, 191, 0.16);
+  --ambient-three: rgba(56, 189, 248, 0.14);
+  --card-tile-color: rgba(52, 211, 153, 0.06);
+  --card-line-color: rgba(165, 180, 252, 0.18);
+  --card-shine-opacity: 0.12;
+  --card-shine-gradient: conic-gradient(from 205deg at 50% 50%, transparent 0deg, #34d399 25deg, rgba(52, 211, 153, 0.18) 295deg, transparent 360deg);
+  --card-hover-border-color: rgba(165, 180, 252, 0.42);
   --tile-glass: rgba(18, 27, 47, 0.5);
   --grid-line: rgba(148, 163, 184, 0.045);
 }
@@ -81,17 +87,17 @@ body::before {
     radial-gradient(42rem 34rem at 76% 38%, var(--ambient-one), transparent 74%),
     radial-gradient(44rem 36rem at 50% 82%, var(--ambient-two), transparent 72%);
   content: '';
-  opacity: 0.82;
+  opacity: 0.58;
   pointer-events: none;
-  filter: blur(18px);
+  filter: blur(24px);
   will-change: transform;
-  animation: ambient-drift 18s ease-in-out infinite alternate;
+  animation: ambient-drift 24s ease-in-out infinite alternate;
 }
 
 @keyframes ambient-drift {
-  0% { transform: translate3d(-3%, -2%, 0) scale(1); }
-  50% { transform: translate3d(3%, 2%, 0) scale(1.08); }
-  100% { transform: translate3d(-2%, 3%, 0) scale(1.03); }
+  0% { transform: translate3d(-2%, -1.5%, 0) scale(1); }
+  50% { transform: translate3d(2%, 1.5%, 0) scale(1.045); }
+  100% { transform: translate3d(-1.5%, 2%, 0) scale(1.02); }
 }
 
 a {
@@ -390,6 +396,146 @@ h2 {
   transform: translateY(1px) scale(0.9);
 }
 
+.card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--tile-glass);
+  box-shadow: 0 3px 6px rgba(23, 32, 51, 0.05), 0 8px 15px rgba(23, 32, 51, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--card-hover-border-color);
+  box-shadow: 0 8px 16px rgba(23, 32, 51, 0.08), 0 15px 28px var(--glow-one);
+}
+
+.card > dt,
+.card > dd {
+  position: relative;
+  z-index: 3;
+}
+
+.card .shine {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms ease;
+}
+
+.card .shine::before {
+  position: absolute;
+  bottom: 55%;
+  left: 50%;
+  width: 150%;
+  padding-bottom: 150%;
+  border-radius: 50%;
+  background-image: var(--card-shine-gradient);
+  content: '';
+  opacity: var(--card-shine-opacity);
+  filter: blur(35px);
+  transform: translateX(-50%);
+}
+
+.card .background {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  -webkit-mask-image: radial-gradient(circle at 60% 5%, black 0%, black 15%, transparent 60%);
+  mask-image: radial-gradient(circle at 60% 5%, black 0%, black 15%, transparent 60%);
+}
+
+.card .tiles {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.card .tile {
+  position: absolute;
+  background-color: var(--card-tile-color);
+  opacity: 0;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+.card .tile-1 { top: 0; left: 0; width: 22.5%; height: 10%; }
+.card .tile-2 { top: 0; left: 22.5%; width: 27.5%; height: 10%; animation-delay: -6s; }
+.card .tile-3 { top: 0; left: 50%; width: 27.5%; height: 10%; animation-delay: -4s; }
+.card .tile-4 { top: 0; left: 77.5%; width: 22.5%; height: 10%; animation-delay: -2s; }
+.card .tile-5 { top: 10%; left: 0; width: 22.5%; height: 22.5%; animation-delay: -4s; }
+.card .tile-6 { top: 10%; left: 22.5%; width: 27.5%; height: 22.5%; animation-delay: -2s; }
+.card .tile-7 { top: 10%; left: 50%; width: 27.5%; height: 22.5%; }
+.card .tile-8 { top: 10%; left: 77.5%; width: 22.5%; height: 22.5%; animation-delay: -4s; }
+.card .tile-9 { top: 32.5%; left: 50%; width: 27.5%; height: 22.5%; animation-delay: -6s; }
+.card .tile-10 { top: 32.5%; left: 77.5%; width: 22.5%; height: 22.5%; animation-delay: -2s; }
+
+@keyframes tile-flicker {
+  0%, 12.5%, 100% { opacity: 1; }
+  25%, 82.5% { opacity: 0; }
+}
+
+.card .line {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+.card .line::before,
+.card .line::after {
+  position: absolute;
+  background-color: var(--card-line-color);
+  content: '';
+  transition: transform 350ms ease;
+}
+
+.card .line::before {
+  right: 0;
+  left: 0;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.card .line::after {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: scaleY(0);
+  transform-origin: top center;
+}
+
+.card .line-1::before { top: 10%; transition-delay: 0s; }
+.card .line-1::after { left: 22.5%; transition-delay: 0s; }
+.card .line-2::before { top: 32.5%; transition-delay: 150ms; }
+.card .line-2::after { left: 50%; transition-delay: 150ms; }
+.card .line-3::before { top: 55%; transition-delay: 300ms; }
+.card .line-3::after { right: 22.5%; transition-delay: 300ms; }
+
+.card:hover .shine { opacity: 1; }
+.card:hover .tiles { opacity: 1; transition-delay: 250ms; }
+.card:hover .tile { animation-name: tile-flicker; }
+.card:hover .line { opacity: 1; }
+.card:hover .line::before { transform: scaleX(1); }
+.card:hover .line::after { transform: scaleY(1); }
+
 .profile-card {
   position: relative;
   margin: 0;
@@ -397,43 +543,23 @@ h2 {
   isolation: isolate;
   border-radius: 16px;
   background: var(--surface);
-  box-shadow: 0 12px 32px rgba(23, 32, 51, 0.16);
-  transition: box-shadow 420ms ease, transform 420ms ease;
+  box-shadow: 0 8px 24px rgba(23, 32, 51, 0.12);
 }
 
 .profile-card::after {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   inset: 0;
   border: 1px solid var(--line);
+  border-color: inherit;
   border-radius: inherit;
   content: '';
   pointer-events: none;
 }
 
-.profile-card::before {
-  position: absolute;
-  z-index: 1;
-  inset: -60% -80%;
-  background: linear-gradient(
-    115deg,
-    transparent 42%,
-    var(--tile-shine) 50%,
-    transparent 58%
-  );
-  content: '';
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(-48%) rotate(12deg);
-  transition: opacity 240ms ease, transform 780ms cubic-bezier(0.2, 0.75, 0.25, 1);
-}
-
-.profile-card.is-hovered::before {
-  opacity: 0.85;
-  transform: translateX(48%) rotate(12deg);
-}
-
 .profile-photo {
+  position: relative;
+  z-index: 0;
   display: block;
   width: 100%;
   aspect-ratio: 1;
@@ -447,6 +573,7 @@ h2 {
 
 .profile-photo-real {
   position: absolute;
+  z-index: 0;
   inset: 0;
   height: 100%;
   opacity: 0;
@@ -455,8 +582,9 @@ h2 {
 }
 
 .profile-card.is-hovered {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 40px var(--glow-one), 0 8px 24px rgba(23, 32, 51, 0.18);
+  transform: translateY(-4px);
+  border-color: var(--card-hover-border-color);
+  box-shadow: 0 8px 16px rgba(23, 32, 51, 0.08), 0 15px 28px var(--glow-one);
 }
 
 .profile-card.is-hovered .profile-photo-shin {
@@ -517,77 +645,12 @@ h2 {
   margin-top: 18px;
 }
 
-.profile-details div {
-  position: relative;
-  isolation: isolate;
+.profile-details > .card {
   display: grid;
   align-content: center;
   gap: 8px;
   min-height: 112px;
   padding: 18px 16px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--tile-glass);
-  box-shadow: 0 8px 22px rgba(23, 32, 51, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.32);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  transition:
-    transform 260ms cubic-bezier(0.2, 0.75, 0.25, 1),
-    border-color 260ms ease,
-    box-shadow 260ms ease,
-    background-color 260ms ease;
-}
-
-.profile-details div::before,
-.profile-details div::after {
-  position: absolute;
-  inset: 0;
-  content: '';
-  pointer-events: none;
-}
-
-.profile-details div::before {
-  z-index: -1;
-  inset: -70% -85%;
-  background: linear-gradient(
-    115deg,
-    transparent 38%,
-    var(--tile-shine) 50%,
-    transparent 62%
-  );
-  opacity: 0;
-  transform: translateX(-45%) rotate(12deg);
-  transition: opacity 240ms ease, transform 780ms cubic-bezier(0.2, 0.75, 0.25, 1);
-}
-
-.profile-details div::after {
-  z-index: -1;
-  background-image:
-    linear-gradient(var(--tile-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--tile-grid) 1px, transparent 1px);
-  background-position: top right;
-  background-size: 24px 24px;
-  mask-image: radial-gradient(circle at 85% 12%, black, transparent 70%);
-  -webkit-mask-image: radial-gradient(circle at 85% 12%, black, transparent 70%);
-  opacity: 0;
-  transition: opacity 300ms ease;
-}
-
-.profile-details div:hover {
-  transform: translateY(-6px) scale(1.025);
-  border-color: var(--focus);
-  background: var(--surface);
-  box-shadow: 0 18px 38px var(--glow-one), inset 0 1px 0 rgba(255, 255, 255, 0.55);
-}
-
-.profile-details div:hover::before {
-  opacity: 0.9;
-  transform: translateX(45%) rotate(12deg);
-}
-
-.profile-details div:hover::after {
-  opacity: 1;
 }
 
 .profile-details dt {
@@ -596,12 +659,40 @@ h2 {
   transition: color 200ms ease;
 }
 
-.profile-details div:hover dt {
+.profile-details > .card:hover dt {
   color: var(--focus);
 }
 
 .profile-details dd {
   font-size: 0.9rem;
+}
+
+.tech-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+}
+
+.tech-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text);
+  font-size: 0.68rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.tech-icon {
+  display: block;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.tech-icon-express {
+  color: var(--muted);
 }
 
 .skills-block {
@@ -1001,9 +1092,19 @@ h2 {
   .theme-toggle,
   .menu-toggle,
   .activity-year-toggle button,
+  .card,
+  .card .shine,
+  .card .tiles,
+  .card .tile,
+  .card .line,
+  .card .line::before,
+  .card .line::after,
   .profile-card,
-  .profile-card::before,
   .profile-photo { transition: none; }
+
+  .card .tile,
+  .card:hover .tile { animation: none; }
+  .card:hover .tile { opacity: 0.55; }
 
   .theme-toggle,
   .menu-toggle,
@@ -1020,7 +1121,7 @@ h2 {
   .activity-profile-link:hover,
   .certificate-row:hover,
   .certificate-row:active,
-  .profile-details div:hover,
+  .profile-details > .card:hover,
   .email-link:hover,
   .email-link:active,
   .btn-primary:active,
@@ -1031,19 +1132,8 @@ h2 {
   .project-row > a:active,
   .activity-profile-link:active,
   .email-link:active,
+  .card:hover,
   .profile-card.is-hovered { transform: none; }
-
-  .profile-card.is-hovered::before {
-    opacity: 0;
-    transform: none;
-  }
-
-  .profile-details div,
-  .profile-details div::before,
-  .profile-details div::after { transition: none; }
-
-  .profile-details div:hover::before,
-  .profile-details div:hover::after { opacity: 0; }
 
   .profile-card.is-hovered .profile-photo-shin,
   .profile-card.is-hovered .profile-photo-real {
