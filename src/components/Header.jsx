@@ -7,13 +7,13 @@ function Header({ theme, onThemeToggle, isProjectPage = false }) {
   const navigationItems = isProjectPage
     ? [
         { href: '/#about', label: 'About' },
-        { href: '/#projects', label: 'Work' },
+        { href: '/#projects', label: 'Projects' },
         { href: '/#activity', label: 'Activity' },
         { href: '/#contact', label: 'Contact' },
       ]
     : [
         { href: '#about', label: 'About' },
-        { href: '#projects', label: 'Work' },
+        { href: '#projects', label: 'Projects' },
         { href: '#activity', label: 'Activity' },
         { href: '#contact', label: 'Contact' },
       ]

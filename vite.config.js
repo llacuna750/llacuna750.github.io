@@ -15,9 +15,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         home: fileURLToPath(new URL('./index.html', import.meta.url)),
-        subnetCalculator: fileURLToPath(new URL('./projects/ipv4-subnet-cidr-calculator/index.html', import.meta.url)),
-        networkDiagnostic: fileURLToPath(new URL('./projects/network-port-latency-diagnostic-simulator/index.html', import.meta.url)),
-        systemsJournal: fileURLToPath(new URL('./projects/it-systems-architecture-lab-journal/index.html', import.meta.url)),
       },
     },
   },
