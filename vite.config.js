@@ -12,6 +12,7 @@ export default defineConfig({
   // This repository serves from the root URL: https://llacuna750.github.io/
   base: '/',
   build: {
+    manifest: true,
     rollupOptions: {
       input: {
         home: fileURLToPath(new URL('./index.html', import.meta.url)),
