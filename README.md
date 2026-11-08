@@ -1,6 +1,6 @@
 # Gab Portfolio
 
-A learning portfolio built with React, CSS, and Vite. The page introduces me as an IT student interested in networking and programming.
+A minimal portfolio built with React, CSS, and Vite. It highlights my web development skills and eagerness to learn.
 
 ## Run it locally
 

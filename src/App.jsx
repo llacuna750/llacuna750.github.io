@@ -1,4 +1,4 @@
-import About from './components/About.jsx'
+import Techstack from "./components/Techstack.jsx";
 import Certificates from './components/Certificates.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
@@ -14,13 +14,10 @@ function App() {
 
   return (
     <>
-      <Header
-        theme={theme}
-        onThemeToggle={toggleTheme}
-      />
+      <Header theme={theme} onThemeToggle={toggleTheme} />
       <main>
         <Hero />
-        <About />
+        <Techstack />
         <Projects />
         <GitHubActivity username="llacuna750" colorScheme={theme} />
         <Certificates />
@@ -28,7 +25,7 @@ function App() {
       </main>
       <Footer />
     </>
-  )
+  );
 }
 
 export default App

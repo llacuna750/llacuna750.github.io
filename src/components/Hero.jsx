@@ -1,33 +1,59 @@
+import { useState } from 'react'
+import shinPicture from '../../6038-dorohedoro-shin.png'
 import profilePicture from '../profilepicture/pangprofile.png'
 
 function Hero() {
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
-    <section className="hero section-wrap" id="top" aria-labelledby="hero-title">
+    <section
+      className="hero section-wrap"
+      id="top"
+      aria-labelledby="hero-title"
+    >
       <div className="hero-copy">
-        <h1 id="hero-title">Gabriel Llacuna &mdash; IT Networking Student</h1>
-        <p className="hero-role">Networking, systems, and web development &middot; Philippines</p>
+        <h1 id="hero-title">Gabriel Llacuna</h1>
+        <p className="hero-role">Open to opportunities &middot; Philippines</p>
         <p className="hero-lead">
-          I build practical React and JavaScript tools that make subnetting, network diagnostics,
-          and IT concepts easier to understand. Open to IT networking internships and entry-level roles.
+          I'm eager to{' '}
+          <span className="visually-hidden">learn, build, and grow</span>
+          <span className="typewriter" aria-hidden="true" />.
         </p>
         <div className="hero-actions">
-          <a className="btn-primary" href="#projects">Selected work</a>
-          <a className="text-link" href="https://github.com/llacuna750" target="_blank" rel="noreferrer">
+          <a className="btn-primary" href="#contact">
+            Contact me
+          </a>
+          <a
+            className="text-link"
+            href="https://github.com/llacuna750"
+            target="_blank"
+            rel="noreferrer"
+          >
             GitHub
           </a>
         </div>
       </div>
 
-      <figure className="profile-card">
+      <figure
+        className={`profile-card${isHovered ? " is-hovered" : ""}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <img
-          className="profile-photo"
-          src={profilePicture}
-          alt="Gabriel Llacuna, an Information Technology student focused on networking and web development"
+          className="profile-photo profile-photo-shin"
+          src={shinPicture}
+          alt={isHovered ? "" : "Shin from Dorohedoro"}
+          aria-hidden={isHovered}
         />
-        <figcaption>Open to internships</figcaption>
+        <img
+          className="profile-photo profile-photo-real"
+          src={profilePicture}
+          alt={isHovered ? "Portrait of Gabriel Llacuna" : ""}
+          aria-hidden={!isHovered}
+        />
       </figure>
     </section>
-  )
+  );
 }
 
 export default Hero
