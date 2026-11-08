@@ -16,7 +16,7 @@ function Hero() {
     >
       <div className="hero-copy">
         <h1 id="hero-title">Gabriel Llacuna</h1>
-        <p className="hero-role">Open to opportunities &middot; Philippines</p>
+        <p className="hero-role">Web development learner &middot; Open to opportunities &middot; Philippines</p>
         <p className="hero-lead">
           I'm eager to{' '}
           <span className="visually-hidden">learn, build, and grow</span>

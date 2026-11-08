@@ -32,7 +32,7 @@ function Techstack() {
       <div className="section-wrap about-grid">
         <h2 className="section-label" id="about-title">Techstack</h2>
         <div className="about-copy">
-          {/* <p>I'm building my web development skills.</p> */}
+          <p>I'm building my web development skills across frontend and backend technologies.</p>
           <dl className="profile-details">
             {techGroups.map((group) => (
               <div className="card tech-card" key={group.title}>

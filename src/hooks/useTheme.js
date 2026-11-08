@@ -3,8 +3,12 @@ import { useEffect, useState } from 'react'
 const themeStorageKey = 'portfolio-theme'
 
 function getInitialTheme() {
-  const documentTheme = document.documentElement.dataset.theme
-  if (documentTheme === 'light' || documentTheme === 'dark') return documentTheme
+  if (typeof document !== 'undefined') {
+    const documentTheme = document.documentElement.dataset.theme
+    if (documentTheme === 'light' || documentTheme === 'dark') return documentTheme
+  }
+
+  if (typeof window === 'undefined') return 'light'
 
   try {
     const savedTheme = window.localStorage.getItem(themeStorageKey)
@@ -17,9 +21,17 @@ function getInitialTheme() {
 }
 
 export function useTheme() {
-  const [theme, setTheme] = useState(getInitialTheme)
+  const [theme, setTheme] = useState('light')
+  const [isThemeLoaded, setIsThemeLoaded] = useState(false)
 
   useEffect(() => {
+    setTheme(getInitialTheme())
+    setIsThemeLoaded(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isThemeLoaded) return
+
     document.documentElement.dataset.theme = theme
     document.querySelector('meta[name="theme-color"]')?.setAttribute(
       'content',
@@ -31,7 +43,7 @@ export function useTheme() {
     } catch {
       // Theme selection still works if storage is unavailable.
     }
-  }, [theme])
+  }, [theme, isThemeLoaded])
 
   function toggleTheme() {
     setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'))
