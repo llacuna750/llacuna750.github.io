@@ -2,6 +2,9 @@ import { useState } from 'react'
 import shinPicture from '../../6038-dorohedoro-shin.png'
 import profilePicture from '../profilepicture/pangprofile.png'
 
+const tileNumbers = Array.from({ length: 10 }, (_, index) => index + 1)
+const lineNumbers = [1, 2, 3]
+
 function Hero() {
   const [isHovered, setIsHovered] = useState(false)
 
@@ -35,7 +38,7 @@ function Hero() {
       </div>
 
       <figure
-        className={`profile-card${isHovered ? " is-hovered" : ""}`}
+        className={`profile-card card${isHovered ? " is-hovered" : ""}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -51,6 +54,17 @@ function Hero() {
           alt={isHovered ? "Portrait of Gabriel Llacuna" : ""}
           aria-hidden={!isHovered}
         />
+        <div className="background" aria-hidden="true">
+          <div className="tiles">
+            {tileNumbers.map((tile) => (
+              <span className={`tile tile-${tile}`} key={tile} />
+            ))}
+          </div>
+          {lineNumbers.map((line) => (
+            <span className={`line line-${line}`} key={line} />
+          ))}
+        </div>
+        <div className="shine" aria-hidden="true" />
       </figure>
     </section>
   );
